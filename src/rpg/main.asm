@@ -334,11 +334,7 @@ UpdateFrame:
 
 .NoSolid:
 	jsr	UpdateObjectsPrevPos				; Update objects' previous positions
-
-	jsr	UpdateScript					; Update script
-	
-	jsr	ProcessKosmQueue				; Process Kosinski moduled queue
-	jmp	ProcessKosQueue					; Process Kosinski queue
+	jmp	UpdateScript					; Update script
 
 ; ------------------------------------------------------------------------------
 ; Draw a frame

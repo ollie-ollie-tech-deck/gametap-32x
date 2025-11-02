@@ -86,12 +86,12 @@ SetVBlankRoutine:
 
 VSync:
 	st	vsync_flag					; Set VSync flag
-
-WaitVSync:
 	if DEBUG<>0
 		move.w	#$9100,VDP_CTRL				; Hide performance meter
 	endif
 	move	#$2000,sr					; Enable interrupts
+	
+	bsr.w	ProcessKosQueue					; Process Kosinski queue
 
 .Wait:
 	tst.b	vsync_flag					; Has the V-BLANK interrupt run?
@@ -99,7 +99,8 @@ WaitVSync:
 	if DEBUG<>0
 		move.w	#$9193,VDP_CTRL				; Show performance meter
 	endif
-	rts
+	
+	bra.w	ProcessKosmQueue				; Process Kosinski moduled queue
 
 ; ------------------------------------------------------------------------------
 ; Delay for a number of frames

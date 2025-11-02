@@ -179,8 +179,6 @@ InitKosmProcess:
 ProcessKosmQueue:
 	tst.w	kosm_mods_left					; Are there any modules to load?
 	bne.s	.ModulesLeft					; If so, branch
-
-.Done:
 	rts
 
 .ModulesLeft:
@@ -193,6 +191,8 @@ ProcessKosmQueue:
 	lea	kos_buffer,a2
 	bsr.w	QueueKosData
 	ori.w	#$8000,kosm_mods_left				; Set bit to signify decompression in progress
+
+.Done:
 	rts
 
 ; ------------------------------------------------------------------------------
@@ -224,7 +224,7 @@ ProcessKosmQueue:
 	bsr.w	QueueDma
 	
 	tst.w	kosm_mods_left					; Is this the last module?
-	bne.w	.Exit						; If not, branch
+	bne.s	.Done						; If not, branch
 
 	lea	kosm_queue,a0					; Shift Kosinski moduled queue
 	lea	kosm_queue+6,a1

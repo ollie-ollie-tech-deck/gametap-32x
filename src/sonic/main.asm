@@ -288,10 +288,7 @@ DrawFrame:
 	bsr.w	UpdateCram					; Update CRAM
 	
 	bsr.w	ScrollMap					; Scroll map
-	bsr.w	DrawMap						; Draw map
-	
-	bsr.w	ProcessKosmQueue				; Process Kosinski moduled queue
-	bra.w	ProcessKosQueue					; Process Kosinski queue
+	bra.w	DrawMap						; Draw map
 
 ; ------------------------------------------------------------------------------
 ; Initialize camera

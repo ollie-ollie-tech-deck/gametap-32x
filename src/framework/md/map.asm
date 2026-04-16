@@ -1923,10 +1923,10 @@ SpawnMapObjectChunk:
 ; ------------------------------------------------------------------------------
 
 MapInitEvent:
-	move.l	map_initialize,d0				; Get events routine
+	move.l	map_initialize,d0				; Get initialization routine
 	beq.s	.End						; If it's not set, branch
 	
-	movea.l	d0,a0						; Run events routine
+	movea.l	d0,a0						; Run initialization routine
 	jmp	(a0)
 	
 .End:
@@ -1937,10 +1937,10 @@ MapInitEvent:
 ; ------------------------------------------------------------------------------
 
 MapDrawEvent:
-	move.l	map_events,d0					; Get events routine
+	move.l	map_events,d0					; Get draw routine
 	beq.s	.End						; If it's not set, branch
 	
-	movea.l	d0,a0						; Run events routine
+	movea.l	d0,a0						; Run draw routine
 	jmp	(a0)
 	
 .End:

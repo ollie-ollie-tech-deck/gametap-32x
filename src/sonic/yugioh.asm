@@ -94,7 +94,7 @@ CheckCollision:
 	move.w	(a5)+,d1					; Get position
 	move.w	(a5)+,d2
 
-	movem.l	obj.collide_width(a6),d3-d4			; Get maximum distance needed for collision
+	movem.w	obj.collide_width(a6),d3-d4			; Get maximum distance needed for collision
 	add.w	d6,d3
 	add.w	d6,d4
 	

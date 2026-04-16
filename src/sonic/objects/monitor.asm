@@ -56,9 +56,6 @@ GroundState:
 	bsr.s	CheckCollision					; Check collision
 
 GroundState2:
-	moveq	#OBJ_FULL_SOLID,d0				; Make solid
-	bsr.w	SolidObject
-
 	bsr.w	DrawObject					; Draw sprite
 	bra.w	DespawnObject					; Handle despawn
 
@@ -69,12 +66,13 @@ GroundState2:
 FallState:
 	bsr.s	CheckCollision					; Check collision
 	
+FallState2:
 	tst.w	obj.y_speed(a6)					; Are we moving downwards?
 	bmi.s	.CheckCeiling					; If not, branch
 
 	bsr.w	ObjMapCollideDownWide				; Check floor collision
 	tst.w	d1
-	bpl.s	FallState2					; If there was no collision, branch
+	bpl.s	.Fall						; If there was no collision, branch
 	
 	add.w	d1,obj.y(a6)					; Align with floor
 	clr.w	obj.y_speed(a6)					; Stop moving downwards
@@ -85,17 +83,14 @@ FallState:
 .CheckCeiling:
 	bsr.w	ObjMapCollideUpWide				; Check ceiling collision
 	tst.w	d1
-	bpl.s	FallState2					; If there was no collision, branch	
+	bpl.s	.Fall						; If there was no collision, branch	
 	
 	add.w	d1,obj.y(a6)					; Align with ceiling
 	clr.w	obj.y_speed(a6)					; Stop moving upwards
-	
-FallState2:
+
+.Fall:
 	bsr.w	MoveObject					; Apply speed
 	addi.w	#$38,obj.y_speed(a6)
-
-	moveq	#OBJ_FULL_SOLID,d0				; Make solid
-	bsr.w	SolidObject
 
 	bsr.w	DrawObject					; Draw sprite
 	bra.w	DespawnObject					; Handle despawn
@@ -111,7 +106,11 @@ CheckCollision:
 	move.w	#-$180,obj.y_speed(a6)				; Bounce up
 	
 	move.l	#FallState,obj.update(a6)			; Set fall state
-	bra.w	FallState2
+	move.l	#FallState2,(sp)
+
+.Solid:
+	moveq	#OBJ_FULL_SOLID,d0				; Make solid
+	bra.w	SolidObject
 
 .CheckBreak:
 	movea.w	player_object,a1				; Player object
@@ -120,13 +119,11 @@ CheckCollision:
 	
 	btst	#SONIC_ROLL,obj.flags(a1)			; Are they rolling?
 	beq.s	.Solid						; If not, branch
-	
 	bsr.w	CheckObjectCollide				; Check collision with the player
 	bne.s	.End						; If there was none, branch
 
 	btst	#SONIC_AIR,obj.flags(a1)			; Are they in the air?
 	beq.s	.Break						; If not, branch
-
 	neg.w	obj.y_speed(a1)					; Bounce the player up
 	move.w	#-$180,obj.y_speed(a6)				; Bounce ourselves up
 
@@ -155,10 +152,6 @@ CheckCollision:
 	
 .End:
 	rts
-
-.Solid:
-	moveq	#OBJ_FULL_SOLID,d0				; Make solid
-	bra.w	SolidObject
 
 ; ------------------------------------------------------------------------------
 ; Broken state

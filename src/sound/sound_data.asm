@@ -5,7 +5,7 @@
 ; Sound data
 ; ------------------------------------------------------------------------------
 
-	section m68k_rom_sound_0
+	section m68k_rom_sound
 	include	"src/shared.inc"
 	include	"src/sound/smps2asm.inc"
 
@@ -55,8 +55,6 @@ Song_GhzTelefon:
 Song_Godlike:
 	include	"src/sound/music/godlike.asm"
 	even
-
-	section m68k_rom_sound_1
 Song_OneHundredYears:
 	include	"src/sound/music/one_hundred_years.asm"
 	even

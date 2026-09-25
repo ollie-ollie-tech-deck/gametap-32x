@@ -1,22 +1,19 @@
 	org $2000000
-g_m68k_rom_fixed	group obj($0880000),size($68000)
-g_m68k_rom_fixed_data	group org($2068000),obj($08E8000),size($8000)
-g_m68k_rom_sound_0	group org($2070000),obj($08F0000),size($8000)
-g_m68k_rom_sound_1	group org($2078000),obj($08F8000),size($8000)
+g_m68k_rom_fixed	group obj($0880000),size($18000)
+g_m68k_rom_fixed_data	group org($2018000),obj($0898000),size($8000)
+g_m68k_rom_sound	group org($2020000),obj($08A0000),size($8000)
 g_sh2_rom		group
 g_sh2_sdram		group obj($6000000),size($3000)
 g_sh2_rom_2		group
 g_sh2_s_cache		group obj($C0000000),size($400)
 g_sh2_rom_3		group
-g_m68k_rom_bank_3	group org($23B0000),obj($39B0000),size($50000)
+g_m68k_rom_bank_3	group org($2348000),obj($3948000),size($B8000)
 
 	section.w m68k_header,		g_m68k_rom_fixed
 	section.w m68k_init,		g_m68k_rom_fixed
 	section.w m68k_rom_fixed,	g_m68k_rom_fixed
 	section.w m68k_rom_fixed_data,	g_m68k_rom_fixed_data
-	section.w m68k_rom_sound_0,	g_m68k_rom_sound_0
-
-	section.w m68k_rom_sound_1,	g_m68k_rom_sound_1
+	section.w m68k_rom_sound,	g_m68k_rom_sound
 
 	section.l sh2_start,		g_sh2_rom
 	section.l sh2_vectors,		g_sh2_sdram

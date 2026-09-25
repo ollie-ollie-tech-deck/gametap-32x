@@ -10,10 +10,12 @@ Towards the end of development, we were beginning to crunch. As such, there will
 
 Also, provided in the "assets" folder is the script for Aseprite used for loading and saving 32X-specific sprites and palettes, alongside the original project files for the sprites.
 
+Finally, Ollie_Ollie_TechDeck (_StarYeen), "Foda-se" (Devon), and JunkDrives0 would like to give thanks to everyone who gave this hack a chance during the 2024 hacking contest. It was really cool to see people's reactions to it, and even seeing some getting engaged with it. It was truly a fun ride. We hope you enjoy this release of the source code.
+
 ## Credits
-* **Project Lead** - Ollie_Ollie_TechDeck (_HaHaHyena)
+* **Project Lead** - Ollie_Ollie_TechDeck (_StarYeen)
 * **Art** - JunkDrives0, Foda-se (Devon)
-* **Music** - Foda-se (Devon), Ollie_Ollie_TechDeck (_HaHaHyena)
+* **Music** - Foda-se (Devon), Ollie_Ollie_TechDeck (_StarYeen)
 * **Programming** - Foda-se (Devon)
 * **RPG Maker Tiles** - Asato, Ayene-chan, com-show, GrandmaDeb, Hydrasis, Milkian, mlogan, painhurt, Popnfizzle, whtdragon, alberttov, Autofire, Rhino, flammingcorn
 * **Art taken from** Sonic Mania, RPG Maker, Splatterhouse 2, Sonic 2 (Simon Wai), Scary Maze Game, Ao Oni, DOOM, Silent Hill, Majora's Mask, Chaotix, Slender: The Eight Pages, Castlevania: Bloodlines, Charles O'Rear

@@ -5,11 +5,11 @@
 ; Sonic scene 32X data
 ; ------------------------------------------------------------------------------
 
-	section sh2_data_1
+	section sh2_data
 	include	"src/sonic/data/mars.inc"
 
 ; ------------------------------------------------------------------------------	
-; Sprites (section 1)
+; Sprites
 ; ------------------------------------------------------------------------------
 	
 MarsSpr_SonicPlayer:
@@ -111,9 +111,12 @@ MarsSpr_OllieBoss:
 MarsSpr_OllieHand:
 	incbin	"src/sonic/data/mars/ollie_hand_sprites.spr"
 	cnop	0,4
+MarsSpr_BenTear:
+	incbin	"src/sonic/data/mars/ben_tear_sprites.spr"
+	cnop	0,4
 
 ; ------------------------------------------------------------------------------
-; Palettes (section 1)
+; Palettes
 ; ------------------------------------------------------------------------------
 
 MarsPal_RingGirl:
@@ -157,15 +160,6 @@ MarsPal_FinalComputer:
 	cnop	0,4
 MarsPal_OllieBoss:
 	incbin	"src/sonic/data/mars/ollie_boss_palette.pal"
-	cnop	0,4
-
-; ------------------------------------------------------------------------------
-; Sprites (section 2)
-; ------------------------------------------------------------------------------
-
-	section sh2_data_2
-MarsSpr_BenTear:
-	incbin	"src/sonic/data/mars/ben_tear_sprites.spr"
 	cnop	0,4
 
 ; ------------------------------------------------------------------------------

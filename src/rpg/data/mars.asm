@@ -5,13 +5,13 @@
 ; RPG scene 32X data
 ; ------------------------------------------------------------------------------
 
+	section sh2_data
 	include	"src/rpg/data/mars.inc"
 
 ; ------------------------------------------------------------------------------	
-; Sprites (section 1)
+; Sprites
 ; ------------------------------------------------------------------------------
 	
-	section sh2_data_1
 MarsSpr_RpgPlayer:
 	incbin	"src/rpg/data/mars/player_sprites.spr"
 	cnop	0,4
@@ -51,32 +51,6 @@ MarsSpr_CultFrontDoor:
 MarsSpr_Prison:
 	incbin	"src/rpg/data/mars/prison_sprites.spr"
 	cnop	0,4
-
-; ------------------------------------------------------------------------------
-; Palettes (section 1)
-; ------------------------------------------------------------------------------
-
-MarsPal_SuspectChoose:
-	incbin	"src/rpg/data/mars/suspect_choose_palette.pal"
-	cnop	0,4
-MarsPal_SilentHill:
-	incbin	"src/rpg/data/mars/silent_hill_palette.pal"
-	cnop	0,4
-MarsPal_CultFrontDoor:
-	incbin	"src/rpg/data/mars/cult_front_door_palette.pal"
-	cnop	0,4
-MarsPal_GoodEnding:
-	incbin	"src/rpg/data/mars/good_ending_palette.pal"
-	cnop	0,4
-MarsPal_RpgScaryMaze:
-	incbin	"src/rpg/data/mars/scary_maze_palette.pal"
-	cnop	0,4
-
-; ------------------------------------------------------------------------------	
-; Sprites (section 2)
-; ------------------------------------------------------------------------------
-	
-	section sh2_data_2
 MarsSpr_SonicCult:
 	incbin	"src/rpg/data/mars/sonic_cult_sprites.spr"
 	cnop	0,4
@@ -106,6 +80,26 @@ MarsSpr_Cultist:
 	cnop	0,4
 MarsSpr_Warden:
 	incbin	"src/rpg/data/mars/warden_sprites.spr"
+	cnop	0,4
+
+; ------------------------------------------------------------------------------
+; Palettes (section 1)
+; ------------------------------------------------------------------------------
+
+MarsPal_SuspectChoose:
+	incbin	"src/rpg/data/mars/suspect_choose_palette.pal"
+	cnop	0,4
+MarsPal_SilentHill:
+	incbin	"src/rpg/data/mars/silent_hill_palette.pal"
+	cnop	0,4
+MarsPal_CultFrontDoor:
+	incbin	"src/rpg/data/mars/cult_front_door_palette.pal"
+	cnop	0,4
+MarsPal_GoodEnding:
+	incbin	"src/rpg/data/mars/good_ending_palette.pal"
+	cnop	0,4
+MarsPal_RpgScaryMaze:
+	incbin	"src/rpg/data/mars/scary_maze_palette.pal"
 	cnop	0,4
 
 ; ------------------------------------------------------------------------------

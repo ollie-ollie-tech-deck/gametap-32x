@@ -5,7 +5,7 @@
 ; PWM samples
 ; ------------------------------------------------------------------------------
 
-	section sh2_data_1
+	section sh2_data
 	include	"src/framework/mars.inc"
 	
 ; ------------------------------------------------------------------------------
@@ -120,12 +120,6 @@ MarsPwmIndexEnd:
 	PWM_DATA Pwm_BenAppear,		"src/sound/pwm/ben_appear.wav"
 	PWM_DATA Pwm_WellMeetAgain,	"src/sound/pwm/well_meet_again.wav"
 	PWM_DATA Pwm_Cry,		"src/sound/pwm/cry.wav"
-
-; ------------------------------------------------------------------------------
-; PWM samples (section 2)
-; ------------------------------------------------------------------------------
-
-	section sh2_data_2
 	PWM_DATA Pwm_BenTear,		"src/sound/pwm/ben_tear.wav"
 	PWM_DATA Pwm_BenHit,		"src/sound/pwm/ben_hit.wav"
 	PWM_DATA Pwm_GarageOpen,	"src/sound/pwm/garage_open.wav"	
